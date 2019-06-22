@@ -1,13 +1,13 @@
 import React from 'react';
 import NavbarCon from './components/Navbar';
-import Createtask from './components/Createtask';
+import Updateprofile from './components/Updateprofile';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <NavbarCon />
-      <Createtask />
+      <Updateprofile />
     </div>
   );
 }
