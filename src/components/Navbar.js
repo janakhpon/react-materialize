@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "jquery";
 import "materialize-css/dist/js/materialize.js";
 import "materialize-css/dist/css/materialize.css";
@@ -20,14 +21,14 @@ class NavbarCon extends React.Component {
       <Navbar className="navbar-container">
         <NavItem className="left-align">
           <div>
-            <SideNav className="sidenav-container"
+            <SideNav
+              className="sidenav-container"
               trigger={
                 <a href="/">
                   <img src={logo} alt="" className="circle nav-img" />
                   <label className="hide-on-large-only name right nav-profile">
                     Profile
                   </label>
-                  
                 </a>
               }
               options={{ closeOnClick: true }}
@@ -59,11 +60,11 @@ class NavbarCon extends React.Component {
             </SideNav>
           </div>
         </NavItem>
-        <NavItem className="center-align">
-          <a href="/" className="">
+        <NavItem className="center-align">  
+          <Link  to="/createtask">
             <i class="material-icons left">filter_list</i>
             Tasks
-          </a>
+          </Link>
         </NavItem>
 
         <Dropdown
