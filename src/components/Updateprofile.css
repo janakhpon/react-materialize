@@ -1,6 +1,45 @@
-.container-update-profile{
-        background: linear-gradient(-45deg, rgba(73, 155, 234, 1) 0%, rgba(114, 124, 231, 1) 25%, rgba(182, 71, 225, 1) 67%, rgba(235, 29, 221, 1) 100%);
-        color: #fff;
-        border-radius: 0.5rem;
-        height: 85vh;
+.profile-container>* {
+        background: -moz-linear-gradient(to left, rgba(14, 81, 143, 1) 20%, rgba(25, 70, 143, 1) 31%, rgba(62, 33, 145, 1) 70%, rgba(77, 18, 145, 1) 85%);
+        color: #fff !important;
+        font-weight: bold;
+
+
+
+}
+
+.form-container {
+        margin-top: 4rem;
+}
+
+@media (max-width: 700px) {
+
+        .profile-container>* {
+                background: -moz-linear-gradient(to left, rgba(14, 81, 143, 1) 20%, rgba(25, 70, 143, 1) 31%, rgba(62, 33, 145, 1) 70%, rgba(77, 18, 145, 1) 85%);
+                color: #fff !important;
+                font-weight: bold;
+                font-size: 0.8rem;
+
+
+        }
+
+        .form-container {
+                margin-top: 0.5rem;
+        }
+}
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+        .profile-container>* {
+                background: -moz-linear-gradient(to left, rgba(14, 81, 143, 1) 20%, rgba(25, 70, 143, 1) 31%, rgba(62, 33, 145, 1) 70%, rgba(77, 18, 145, 1) 85%);
+                color: #fff !important;
+                font-weight: bold;
+                font-size: 0.8rem;
+
+
+        }
+
+
+        .form-container {
+                margin-top: 0.5rem;
+        }
 }
