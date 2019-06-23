@@ -4,24 +4,13 @@ import M from "materialize-css";
 import "materialize-css/dist/js/materialize.js";
 import "materialize-css/dist/css/materialize.css";
 import "./Createtask.css";
-import { Collapsible, CollapsibleItem } from "react-materialize";
+import { Collapsible, CollapsibleItem, Button } from "react-materialize";
 import logo from "../img/favicon.png";
+import './Createtask.css';
 
 class Createtask extends React.Component {
   componentDidMount() {
     const options = {
-      onOpenStart: () => {
-        console.log("Open Start");
-      },
-      onOpenEnd: () => {
-        console.log("Open End");
-      },
-      onCloseStart: () => {
-        console.log("Close Start");
-      },
-      onCloseEnd: () => {
-        console.log("Close End");
-      },
       inDuration: 250,
       outDuration: 250,
       opacity: 0.5,
@@ -30,11 +19,6 @@ class Createtask extends React.Component {
       endingTop: "10%"
     };
     M.Modal.init(this.Modal, options);
-
-    // let instance = M.Modal.getInstance(this.Modal);
-    // instance.open();
-    // instance.close();
-    // instance.destroy();
   }
 
   render() {
@@ -43,25 +27,20 @@ class Createtask extends React.Component {
         <div className="container">
           <div className="row">
             <div className="col s12 m8 l9">
-              <Collapsible popout>
+              <Collapsible className="collapsible" popout>
                 <CollapsibleItem
+                  className="teal lighten-2 collapsible-item"
                   header="Better safe than sorry. That's my motto."
                   icon="filter_drama"
+                  style={{ background: "black" }}
                 >
                   Better safe than sorry. That's my motto.
-                </CollapsibleItem>
-                <CollapsibleItem
-                  header="Yeah, you do seem to have a little 'shit creek' ac…"
-                  icon="place"
-                >
-                  Yeah, you do seem to have a little 'shit creek' action going.
-                </CollapsibleItem>
-                <CollapsibleItem
-                  header="You know, FYI, you can buy a paddle. Did you not p…"
-                  icon="whatshot"
-                >
-                  You know, FYI, you can buy a paddle. Did you not plan for this
-                  contingency?
+                  <div className="section"></div>
+                  <hr></hr>
+                  <div className="row center-align">
+                    <Button waves>update</Button>
+                    <Button waves>completed</Button>
+                  </div>
                 </CollapsibleItem>
               </Collapsible>
             </div>
@@ -132,7 +111,10 @@ class Createtask extends React.Component {
             </div>
           </div>
           <div className="modal-footer">
-            <button type="submit" className="waves-effect waves-green btn-flat">
+            <button
+              type="submit"
+              className="waves-effect waves-green btn-flat"
+            >
               <i className="material-icons left">close</i>close
             </button>
             <a
