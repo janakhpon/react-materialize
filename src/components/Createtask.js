@@ -2,22 +2,26 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import Taskform from "./Taskform";
+import Taskfeed from './Taskfeed';
 import Preloader from "./Preloader";
 import { getTasks } from "../actions/taskActions";
+import './Createtask.css';
 
 class Createtask extends Component {
   componentDidMount() {
     this.props.getTasks();
+    
   }
 
   render() {
-    const { posts, loading } = this.props.post;
+    const { tasks, loading } = this.props.task;
     let postContent;
 
-    if (posts === null || loading) {
+    if (tasks === null || loading) {
       postContent = <Preloader />;
     } else {
-      postContent = <h1>fuck</h1>;
+      postContent = <Taskfeed tasks={tasks} />;
+      
     }
 
     return (
@@ -31,11 +35,11 @@ class Createtask extends Component {
 
 Createtask.propTypes = {
   getTasks: PropTypes.func.isRequired,
-  post: PropTypes.object.isRequired
+  task: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
-  post: state.post
+  task : state.task
 });
 
 export default connect(

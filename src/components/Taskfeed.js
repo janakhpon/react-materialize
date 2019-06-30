@@ -4,9 +4,9 @@ import Taskitem from "./Taskitem";
 
 class TaskFeed extends Component {
   render() {
-    const { posts } = this.props;
+    const {tasks } = this.props;
 
-    return posts.map(post => <Taskitem key={post._id} post={post} />);
+    return tasks.map(task => <Taskitem key={task._id} task={task} />);
   }
 }
 
