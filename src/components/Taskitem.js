@@ -13,26 +13,24 @@ class Taskitem extends React.Component {
   }
 
   render() {
-    const { post, auth } = this.props;
-    return (
-      <div classtitle="container">
-        <div classtitle="row">
-          <div classtitle="col s12 m12 l12">
-            <Collapsible classtitle="collapsible" popout>
+    const { task, auth } = this.props;
+    return ( 
+          <div className="col s12 col m12 col l12">
+            <Collapsible className="collapsible" popout>
               <CollapsibleItem
-                classtitle="teal lighten-2 collapsible-item"
-                header={post.title}
+                className="teal lighten-2 collapsible-item"
+                header={task.title}
                 icon="filter_drama"
                 style={{ background: "black" }}
               >
-                {post.description} at {post.deadline}
-                <div classtitle="section" />
+                {task.description} at {task.deadline}
+                <div className="section" />
                 <hr />
-                <div classtitle="row center-align">
-                  {post.user === auth.user.id ? (
+                <div className="row center-align">
+                  {task.user === auth.user.id ? (
                     <Button
                       waves
-                      onClick={this.onDeleteClick.bind(this, post._id)}
+                      onClick={this.onDeleteClick.bind(this, task._id)}
                     >
                       delete
                     </Button>
@@ -45,15 +43,13 @@ class Taskitem extends React.Component {
               </CollapsibleItem>
             </Collapsible>
           </div>
-        </div>
-      </div>
     );
   }
 }
 
 Taskitem.propTypes = {
   deleteTask: PropTypes.func.isRequired,
-  post: PropTypes.object.isRequired,
+  task: PropTypes.object.isRequired,
   auth: PropTypes.object.isRequired
 };
 
